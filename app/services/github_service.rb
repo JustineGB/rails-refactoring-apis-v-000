@@ -1,5 +1,4 @@
 class GithubService
-
   attr_reader :access_token
 
   def initialize(access_hash = nil)
@@ -15,15 +14,15 @@ class GithubService
   end
 
   def get_username
-    user_response = Faraday.get "https://api.github.com/user", {}, {'Authorization' => "token #{self.access_token}", 'Accept' => 'application/json'}
-    user_json = JSON.parse(user_response.body)
-    user_json["login"]
+    response = Faraday.get "https://api.github.com/user", {}, {'Authorization' => "token #{self.access_token}", 'Accept' => 'application/json'}
+    u_json = JSON.parse(response.body)
+    u_json["login"]
   end
 
   def get_repos
     response = Faraday.get "https://api.github.com/user/repos", {}, {'Authorization' => "token #{self.access_token}", 'Accept' => 'application/json'}
-    repos_array = JSON.parse(response.body)
-    repos_array.map{|repo| GithubRepo.new(repo) }
+    r_array = JSON.parse(response.body)
+    r_array.map{|repo| GithubRepo.new(repo) }
   end
 
   def create_repo(name)

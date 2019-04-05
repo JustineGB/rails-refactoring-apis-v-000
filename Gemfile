@@ -1,9 +1,13 @@
 source 'https://rubygems.org'
 
+# gem 'bundler', '~> 1.6', '>=1.16.1'
+# gem 'rails', '4.2.1'
+# # # Use sqlite3 as the database for Active Record
+# gem 'sqlite3'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+# # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails'
-# Use sqlite3 as the database for Active Record
+# # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~>1.3.6'
 gem 'nokogiri', '1.8'
 # Use SCSS for stylesheets
